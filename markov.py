@@ -79,6 +79,10 @@ def tweet(chains):
     status = api.PostUpdate(make_text(chains))
     print status
 
+    tweet_again = raw_input('\nWould you like to tweet again? Enter to tweet again or q to quit: ')
+
+    while tweet_again[0] != 'q':
+        tweet(chains)
 # Get the filenames from the user through a command line prompt, ex:
 # python markov.py green-eggs.txt shakespeare.txt
 
@@ -97,3 +101,4 @@ chains = make_chains(text)
 
 # Your task is to write a new function tweet, that will take chains as input
 tweet(chains)
+
